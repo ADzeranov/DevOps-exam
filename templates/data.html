@@ -2,29 +2,10 @@
 
 
 {% block content %}
-        {{ message }}
-    <h1>{% block title %} Data {% endblock %}</h1>
-          {% for data in user %}
-            <table>
-              <thread>
-                <tr>
-                  <th>№</th>
-                  <th>ФИО</th>
-                  <th>Серия паспорта</th>
-                  <th>Номер поезда</th>
-                  <th>Номер сидения</th>
-                  <th>Номер вагона</th>
-                </tr>
-              </thread>
-              <tbody>
-              <tr>
-            {% for record in data %}
-              <td>
-              {{ record }}
-              </td>
-            {% endfor %}
-              </tr>
-              </tbody> 
-            </table>
-      {% endfor %}
+    <h1>{% block title %} Premium vokzal {% endblock %}</h1>
+    {% for data in user_data %}
+        <div class='themes'>
+            <h3>#{{ data[0] }} | {{ data[1] }} | {{ data[2] }} | {{ data[3] }} | {{ data[4] }} | {{ data[5] }}
+        </div>
+    {% endfor %}
 {% endblock %}
