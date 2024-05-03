@@ -16,7 +16,7 @@ services:
 
   app:
     container_name: exam
-    image: adzeranov/exam1:latest
+    image: adzeranov/exam1:tagname
     build:
       context: .
       dockerfile: Dockerfile
