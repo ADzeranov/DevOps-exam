@@ -2,10 +2,27 @@
 
 
 {% block content %}
-    <h1>{% block title %} Premium vokzal {% endblock %}</h1>
-    {{% for data in user %}
-      	<div class='themes'>
-        	<h3>#{{ data[0] }} | {{ data[1] }} | {{ data[2] }} | {{ data[3] }} | {{ data[4] }} | {{ data[5] }}
-      	</div>
-      {% endfor %} 
+        {{ message }}
+    <h1>{% block title %} Data {% endblock %}</h1>
+          {% for data in user %}
+            <table>
+              <thread>
+                <tr>
+                  <th>№</th>
+                  <th>login</th>
+                  <th>password</th>
+                  <th>role</th>
+                </tr>
+              </thread>
+              <tbody>
+              <tr>
+            {% for record in data %}
+              <td>
+              {{ record }}
+              </td>
+            {% endfor %}
+              </tr>
+              </tbody> 
+            </table>
+      {% endfor %}
 {% endblock %}
