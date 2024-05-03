@@ -33,7 +33,7 @@ def auth():
         conn = get_db_connection()
         cur = conn.cursor()
         try:
-            cur.execute('SELECT login, sms, id1, chair, vagon FROM public.user where login = ' +'\'' + login + '\' and sms = '+ '\'' + password + '\';')
+            cur.execute('SELECT id, login, sms, id1, chair, vagon FROM public.user where login = ' +'\'' + login + '\' and sms = '+ '\'' + password + '\';')
             user = cur.fetchall()
             cur.close()
             conn.close()
@@ -49,7 +49,12 @@ def auth():
             return render_template('auth.html')
         
         
-    return render_template('user.html')
+    return render_template('auth.html')
+    
+@app.route('/data')
+def data():
+    message = 'you need to authorize'
+    return render_template('data.html', message=message)
 if __name__=='__main__':
     app.run(host='0.0.0.0')
 
