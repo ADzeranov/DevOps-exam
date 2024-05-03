@@ -5,11 +5,11 @@
     <h1>{% block title %} Авторизация {% endblock %}</h1>
       <form action="" method="post">
         <p>
-          <label for="login">Фио</label>
+          <label for="login">ФИО</label>
           <input type="text" name="login">
         </p>
         <p>
-          <label for="password">Паспорт </label>
+          <label for="password">Паспорт</label>
           <input type="text" name="sms">
         </p>
         <p>
@@ -18,7 +18,7 @@
       </form>
       {% for data in user %}
         <div class='themes'>
-          <h3>#{{ data[0] }} | {{ data[1] }} | {{ data[2] }} | {{ data[3] }} | {{ data[4] }}
+            <h3>#{{ data[0] }} | {{ data[1] }} | {{ data[2] }} | {{ data[3] }} | {{ data[4] }} | {{ data[5] }}
         </div>
       {% endfor %}
 {% endblock %}
